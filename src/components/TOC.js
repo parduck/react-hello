@@ -1,12 +1,22 @@
-import React,{Component} from 'react';
+import React from 'react';
+import {Component} from 'react';
 
-function TOC() {
-    return (
-      <nav>
-          <li><a href="http://google.com">google</a></li>
-          <li><a href="http://naver.com">naver</a></li>
-      </nav>      
-    );
+class TOC extends Component {
+    render(){
+        var lists =[];
+        var data =this.props.data;
+        var i=0;
+        while(i < data.length){
+            lists.push(<li key={data[i].id}><a href={"/content/"+data[i].id}>{data[i].title}</a></li>);
+            i=i+1;
+        }
+        return (
+            <nav>
+            <li><a href="http://google.com">google</a></li>
+            {lists}
+        </nav>      
+        );
+    }
   }
   
 export default TOC;
