@@ -7,7 +7,7 @@ import Control from './components/Control';
 import './App.css';
 
 class App extends Component{
-  constructor(props){
+  constructor(props){ //test
     super(props);
     this.max_content_id=3;
     this.state = {
